@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spectre Beta | SCP:SL Dominance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #0A0F2C;
+            --accent-blue: #1E3A8A;
+            --highlight-blue: #3B82F6;
+        }
+
+        /* Custom Crosshair Cursor */
+        * {
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><line x1="16" y1="8" x2="16" y2="24" stroke="%233B82F6" stroke-width="2"/><line x1="8" y1="16" x2="24" y2="16" stroke="%233B82F6" stroke-width="2"/></svg>') 16 16, auto;
+            scroll-behavior: smooth; /* Essential for smooth transitions */
+        }
+
+        a, button, .glass-card, .faq-item {
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><line x1="16" y1="4" x2="16" y2="28" stroke="%23FFFFFF" stroke-width="2"/><line x1="4" y1="16" x2="28" y2="16" stroke="%23FFFFFF" stroke-width="2"/><circle cx="16" cy="16" r="4" fill="none" stroke="%23FFFFFF" stroke-width="1"/></svg>') 16 16, pointer !important;
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            color: white;
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1, h2, h3, .font-cyber {
+            font-family: 'Rajdhani', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .glow-text {
+            text-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--highlight-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .glass-card {
+            background: rgba(30, 58, 138, 0.1);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .glass-card:hover {
+            border-color: var(--highlight-blue);
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .bg-mesh {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 15% 15%, rgba(30, 58, 138, 0.4) 0%, transparent 35%),
+                        radial-gradient(circle at 85% 85%, rgba(59, 130, 246, 0.15) 0%, transparent 35%);
+            z-index: -1;
+        }
+
+        .faq-item {
+            border-left: 3px solid var(--accent-blue);
+            padding-left: 20px;
+            transition: border-color 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-left-color: var(--highlight-blue);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-mesh"></div>
+
+    <nav class="fixed top-0 left-0 w-full z-50 flex justify-center py-6">
+        <div class="glass-card px-8 py-3 rounded-full flex gap-8 items-center bg-opacity-40 border-opacity-30">
+            <a href="#faq" class="nav-link text-xs font-bold uppercase tracking-widest text-blue-300">FAQ</a>
+            <a href="#purchase" class="nav-link text-xs font-bold uppercase tracking-widest text-blue-300">Buy</a>
+            <a href="https://discord.gg/z8xnnWUu6q" target="_blank" class="nav-link text-xs font-bold uppercase tracking-widest text-blue-300">Support</a>
+        </div>
+    </nav>
+
+    <section id="home" class="min-h-screen flex items-center justify-center px-6">
+        <div class="text-center max-w-4xl pt-20">
+            <h1 class="text-7xl md:text-9xl font-extrabold mb-4 glow-text tracking-tighter">
+                Spectre <span class="text-blue-500">Beta</span>
+            </h1>
+            <p class="text-lg md:text-2xl text-blue-200 mb-10 opacity-90 font-light tracking-wide">
+                Outsmart everyone. Dominate the facility. 
+                <span class="block text-sm mt-3 text-blue-400 font-mono uppercase tracking-[0.3em]">Undetectable • Reliable • Yours</span>
+            </p>
+
+            <div class="flex flex-col md:flex-row gap-6 justify-center">
+                <a href="https://discord.gg/z8xnnWUu6q" target="_blank" 
+                   class="btn-glow bg-transparent border-2 border-blue-500/50 text-white px-12 py-4 rounded-full font-bold text-lg hover:bg-blue-500/20">
+                    Discord
+                </a>
+                <a href="#purchase" 
+                   class="bg-blue-600 text-white px-12 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-blue-500 transition-all duration-300 transform hover:scale-105">
+                    Access Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="purchase" class="min-h-screen flex items-center justify-center px-6 py-32">
+        <div class="max-w-6xl w-full">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-7xl font-bold mb-4 glow-text">Store</h2>
+                <div class="h-1 w-24 bg-blue-500 mx-auto rounded-full mb-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="glass-card p-10 rounded-3xl text-center flex flex-col">
+                    <h3 class="text-2xl text-blue-400 mb-2">Weekly</h3>
+                    <div class="text-5xl font-bold mb-8">$5<span class="text-base opacity-40 font-normal"> / week</span></div>
+                    <ul class="text-sm text-left space-y-4 mb-10 opacity-80 flex-grow">
+                        <li>✔ Full Feature Access</li>
+                        <li>✔ Instant HWID Reset</li>
+                        <li>✔ 24/7 Support</li>
+                    </ul>
+                    <button class="w-full py-4 rounded-xl border border-blue-500/30 text-blue-300 font-bold hover:bg-blue-500/10 transition">Select Tier</button>
+                </div>
+
+                <div class="glass-card p-10 rounded-3xl text-center flex flex-col border-blue-500/60 bg-blue-900/20 scale-105 relative">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-500 text-[10px] font-black py-1 px-4 rounded-lg">POPULAR</div>
+                    <h3 class="text-2xl text-blue-400 mb-2 mt-2">Monthly</h3>
+                    <div class="text-5xl font-bold mb-8">$10<span class="text-base opacity-40 font-normal"> / month</span></div>
+                    <ul class="text-sm text-left space-y-4 mb-10 opacity-80 flex-grow">
+                        <li>✔ All Weekly Features</li>
+                        <li>✔ Priority Updates</li>
+                        <li>✔ Private Discord Access</li>
+                    </ul>
+                    <button class="w-full py-4 rounded-xl bg-blue-600 font-bold hover:bg-blue-500 shadow-xl transition">Select Tier</button>
+                </div>
+
+                <div class="glass-card p-10 rounded-3xl text-center flex flex-col">
+                    <h3 class="text-2xl text-blue-400 mb-2">Lifetime</h3>
+                    <div class="text-5xl font-bold mb-8">$100<span class="text-base opacity-40 font-normal"> / life</span></div>
+                    <ul class="text-sm text-left space-y-4 mb-10 opacity-80 flex-grow">
+                        <li>✔ Permanent License</li>
+                        <li>✔ Early Beta Access</li>
+                        <li>✔ Lifetime Support</li>
+                    </ul>
+                    <button class="w-full py-4 rounded-xl border border-blue-500/30 text-blue-300 font-bold hover:bg-blue-500/10 transition">Select Tier</button>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <p class="text-blue-400 bg-blue-900/20 border border-blue-500/20 inline-block px-8 py-4 rounded-2xl">
+                    Payment system coming soon. DM on Discord to purchase.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="min-h-screen flex items-center justify-center px-6 py-32">
+        <div class="max-w-4xl w-full">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-7xl font-bold mb-4 glow-text">F.A.Q</h2>
+                <p class="text-blue-400 opacity-60">Commonly asked questions</p>
+            </div>
+
+            <div class="space-y-8">
+                <div class="faq-item">
+                    <h4 class="text-xl font-bold text-blue-400 mb-2">Is the cheat Undetected?</h4>
+                    <p class="text-blue-100 opacity-70">Yes, the cheat itself is undetected, but there are some blatant features that could trigger the anticheat if used aggressively.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4 class="text-xl font-bold text-blue-400 mb-2">Will the cheat always be updated?</h4>
+                    <p class="text-blue-100 opacity-70">Most likely. The cheat will be updated every time SCP:SL pushes a new version to ensure compatibility.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4 class="text-xl font-bold text-blue-400 mb-2">What operating systems are supported?</h4>
+                    <p class="text-blue-100 opacity-70">Spectre Beta currently supports Windows 10 and Windows 11 (64-bit editions).</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4 class="text-xl font-bold text-blue-400 mb-2">Can I get a refund?</h4>
+                    <p class="text-blue-100 opacity-70">Due to the nature of digital goods, we do not offer refunds. We recommend trying a 1-week pass first.</p>
+                </div>
+            </div>
+
+            <div class="mt-20 text-center">
+                <a href="#home" class="text-blue-500/60 hover:text-blue-400 transition-all font-bold tracking-widest text-xs">
+                    RETURN TO TOP ↑
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 border-t border-blue-900/30 text-center">
+        <div class="opacity-30 text-xs tracking-[0.5em] mb-4">SPECTRE BETA SOLUTIONS</div>
+        <div class="flex justify-center gap-6 opacity-50 text-[10px]">
+            <span>SERVER STATUS: <span class="text-green-500">ONLINE</span></span>
+            <span>VERSION: v2.0.4</span>
+            <span>ENCRYPTION: ACTIVE</span>
+        </div>
+    </footer>
+
+</body>
+</html>
